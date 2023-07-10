@@ -1,0 +1,17 @@
+import feedparser
+
+print ('Please enter the URL: ')
+
+url = input()
+
+#https://rss.app/feeds/2UQMII7YdUMy6OpE.xml
+#https://timesofindia.indiatimes.com/rssfeedstopstories.cms
+#https://timesofindia.indiatimes.com/rssfeeds/296589292.cms
+#https://www.thehindu.com/feeder/default.rss
+#https://feeds.skynews.com/feeds/rss/home.xml
+
+feed = feedparser.parse(url)
+
+for item in feed['entries']:
+
+    print (item['title']+ "\n" + item['link']+"\n" + item['description']+"\n")
